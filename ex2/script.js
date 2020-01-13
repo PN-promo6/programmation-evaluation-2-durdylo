@@ -3,6 +3,7 @@
 function movieWebsiteHomepage() {
   let newSection = document.createElement("section")
   document.body.appendChild(newSection);
+  newSection.id='homePage'
 
   let newTitle = document.createElement("h1")
   newTitle.textContent="Cinema Le Dauphin"
@@ -13,9 +14,13 @@ function movieWebsiteHomepage() {
   newSection.appendChild(newPara)
 
   let newButton = document.createElement("button")
+
   newButton.textContent="Voir les films à l'affiche cette semaine"
   newSection.appendChild(newButton)
+  newButton.id='nextButton'
+
 }
+
 movieWebsiteHomepage()
 
 
@@ -26,6 +31,8 @@ let infoMovies =[
   ["WHAT YOU GONNA DO WHEN THE WORLD'S ON FIRE", "Roberto Minervini", "Etats-Unis/Italie", "2018","2h03","vostfr"],
   ["GRASS", "Hong Sang-Soo", "Corée du Sud","2018","1h06","vostfr"]
 ]
+
+
 
 function displayInfoOfMovies(array){
   let i=1
@@ -38,6 +45,7 @@ function displayInfoOfMovies(array){
 
   let newTable = document.createElement("table");
   document.body.appendChild(newTable);
+  newTable.id='infoMoviesTable'
 
   let newTableHead = document.createElement("thead")
   newTable.appendChild(newTableHead)
@@ -73,3 +81,13 @@ function displayInfoOfMovies(array){
 
 }
 displayInfoOfMovies(infoMovies)
+
+let buttonNext = document.getElementById('nextButton')
+let homePage= document.getElementById('homePage')
+let infoMoviesTable = document.getElementById('infoMoviesTable')
+infoMoviesTable.style.display=("none")
+
+buttonNext.addEventListener("click" , function () {
+  homePage.style.display=("none")
+  infoMoviesTable.style.display=("block")
+},);
