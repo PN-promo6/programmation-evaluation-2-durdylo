@@ -77,14 +77,12 @@ function displayInfoOfMovies(array) {
   }
 
 }
-displayInfoOfMovies(infoMovies)
 
 let buttonNext = document.getElementById('nextButton')
 let homePage = document.getElementById('homePage')
 let infoMoviesTable = document.getElementById('infoMoviesTable')
-infoMoviesTable.style.display = ("none")
 
 buttonNext.addEventListener("click", function() {
   homePage.style.display = ("none")
-  infoMoviesTable.style.display = ("block")
+  displayInfoOfMovies(infoMovies)
 }, );
