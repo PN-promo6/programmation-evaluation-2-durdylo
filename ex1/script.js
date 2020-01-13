@@ -32,6 +32,7 @@ function createTableHTML(array) {
     currentElement3 = headerData[k]
     let newTableHeadData =document.createElement("th")
     newTableHeadData.textContent= currentElement3
+    newTableHeadData.style.color="red"
     newTableHeadRow.appendChild(newTableHeadData)
     k++
   }
@@ -43,8 +44,12 @@ function createTableHTML(array) {
     j=0
     while (j<currentElement.length) {
       currentElement2=currentElement[j]
+
       let newTableData=document.createElement("td")
       newTableData.textContent=currentElement2
+      if (currentElement2==currentElement[3]) {
+        newTableData.style.fontStyle = "italic";
+      }
       newTableRow.appendChild(newTableData)
       j++
     }
