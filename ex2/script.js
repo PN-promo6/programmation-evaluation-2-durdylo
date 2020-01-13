@@ -28,5 +28,48 @@ let infoMovies =[
 ]
 
 function displayInfoOfMovies(array){
-  
+  let i=1
+  let j=0
+  let k=0
+  let currentElement
+  let currentElement2
+  let currentElement3
+  let headerData= array[0]
+
+  let newTable = document.createElement("table");
+  document.body.appendChild(newTable);
+
+  let newTableHead = document.createElement("thead")
+  newTable.appendChild(newTableHead)
+
+  let newTableHeadRow = document.createElement("tr")
+  newTableHead.appendChild(newTableHeadRow)
+
+  let newTableBody = document.createElement("tbody");
+  newTable.appendChild(newTableBody);
+
+  while (k < headerData.length) {
+    currentElement3 = headerData[k]
+    let newTableHeadData =document.createElement("th")
+    newTableHeadData.textContent= currentElement3
+    newTableHeadRow.appendChild(newTableHeadData)
+    k++
+  }
+  i=1
+  while (i<array.length) {
+    currentElement =array[i]
+    let newTableRow = document.createElement("tr")
+    newTableBody.appendChild(newTableRow)
+    j=0
+    while (j<currentElement.length) {
+      currentElement2=currentElement[j]
+      let newTableData=document.createElement("td")
+      newTableData.textContent=currentElement2
+      newTableRow.appendChild(newTableData)
+      j++
+    }
+    i++
+  }
+
 }
+displayInfoOfMovies(infoMovies)
