@@ -1,4 +1,5 @@
 let fishlist = [
+  ["Ordre","Famille","Nom vernaculaire","Nom binomial"],
   ["Aulopiformes","Synodontidae","Poisson lézard","Synodus saurus"],
   ["Aulopiformes","Anguilliformes","Anguille","Anguilla anguilla"],
   ["Aulopiformes","Congridae","Congre","	Conger conger"],
@@ -10,8 +11,10 @@ let fishlist = [
 function createTableHTML(array) {
   let i=0
   let j=0
-  let currentElement
-  let currentElement2
+  let k=0
+  let currentElement;
+  let currentElement2;
+  let headerData= array[0]
 
   let newTable = document.createElement("table");
   document.body.appendChild(newTable);
@@ -19,9 +22,22 @@ function createTableHTML(array) {
   let newTableBody = document.createElement("tbody");
   newTable.appendChild(newTableBody);
 
+  let newTableHead = document.createElement("thead")
+  newTable.appendChild(newTableHead)
+
+  let newTableHeadRow = document.createElement("tr")
+  newTableHead.appendChild(newTableHeadRow)
+
+  while (k < headerData.length) {
+    currentElement3 = headerData[k]
+    let newTableHeadData =document.createElement("th")
+    newTableHeadData.textContent= currentElement3
+    newTableHeadRow.appendChild(newTableHeadData)
+    k++
+  }
 
   while (i<array.length) {
-    currentElement =array[i]
+    currentElement = array[i]
     let newTableRow = document.createElement("tr")
     newTableBody.appendChild(newTableRow)
     j=0
