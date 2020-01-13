@@ -9,7 +9,7 @@ let fishlist = [
 // creating a function to display a table in the web browser
 
 function createTableHTML(array) {
-  let i=0
+  let i=1
   let j=0
   let k=0
   let currentElement;
